@@ -61,7 +61,9 @@
         ],
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
-            "@php artisan package:discover --ansi"
+            "@php artisan package:discover --ansi",
+            "@php artisan vendor:publish --tag=laravel-assets --ansi --force",
+            "@php artisan livewire:publish --assets --ansi"
         ],
         "post-update-cmd": [
             "@php artisan vendor:publish --tag=laravel-assets --ansi --force"
@@ -95,7 +97,7 @@
     "repositories": [
         {
             "type": "path",
-            "url": "/var/www/html/Docker/laravel-dashboard",
+            "url": "packages/laravel-dashboard",
             "options": {
                 "symlink": true
             }

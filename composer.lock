@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1dd7e4e07ea862c140621dd291aef897",
+    "content-hash": "d99b14454ba346082509432a427bb2d7",
     "packages": [
         {
             "name": "brick/math",
@@ -1478,8 +1478,8 @@
             "version": "dev-main",
             "dist": {
                 "type": "path",
-                "url": "/var/www/html/Docker/laravel-dashboard",
-                "reference": "399a0e49b75d26ffb10bb335314626128f053a15"
+                "url": "packages/laravel-dashboard",
+                "reference": "d554710128ee59432f5b79d47341f92e185d63c3"
             },
             "require": {
                 "laravel/framework": "^10.0|^11.0|^12.0",
@@ -1522,7 +1522,7 @@
             "description": "A fully dynamic, modular dashboard builder for Laravel applications.",
             "transport-options": {
                 "symlink": true,
-                "relative": false
+                "relative": true
             }
         },
         {

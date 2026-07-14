@@ -1,0 +1,55 @@
+includes:
+    - vendor/larastan/larastan/extension.neon
+    - vendor/nesbot/carbon/extension.neon
+
+parameters:
+
+    ####################################
+    # BASIC SETTINGS
+    ####################################
+    level: 5   # Start here; increase gradually (max 9/10)
+
+    paths:
+        - app/
+
+    ####################################
+    # LARAVEL-SPECIFIC SETTINGS
+    ####################################
+    checkMissingIterableValueType: false
+    checkGenericClassInNonGenericObjectType: false
+
+    ####################################
+    # PERFORMANCE
+    ####################################
+    parallel:
+        maximumNumberOfProcesses: 4
+
+    ####################################
+    # IGNORE COMMON FALSE POSITIVES
+    ####################################
+    ignoreErrors:
+        # Eloquent magic properties
+        - '#Access to an undefined property Illuminate\\Database\\Eloquent\\Model::\$#'
+
+        # Relations accessed as properties
+        - '#Call to an undefined relationship#'
+
+        # Blade variables (often dynamic)
+        - '#Undefined variable: \$#'
+
+    ####################################
+    # EXCLUDE PATHS
+    ####################################
+    excludePaths:
+        analyse:
+            - storage/*
+            - bootstrap/cache/*
+            - vendor/*
+            - public/*
+            - database/migrations/*
+            - database/seeders/*
+
+    ####################################
+    # REPORTING
+    ####################################
+    reportUnmatchedIgnoredErrors: false

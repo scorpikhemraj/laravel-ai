@@ -1,60 +1,93 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Laravel AI & Analytics Platform
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A high-performance Laravel 12 workspace showcasing real-time AI integrations, secure biometric authentication, interactive analytics dashboards, and rich Vue 3/Livewire single-page interfaces.
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 🚀 Tech Stack
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### Backend
+- **Framework**: Laravel 12.x (PHP 8.2+)
+- **Real-time Engine**: Laravel Reverb (high-speed WebSockets)
+- **AI Integration**: `laravel/ai` SDK for model integrations and agent workflows
+- **Multi-Factor Auth**: Google 2FA (`pragmarx/google2fa-laravel`) & Passkeys/WebAuthn (`laragear/webauthn`)
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### Frontend
+- **Reactivity**: Livewire 3 & Volt (declarative inline components)
+- **SPA Views**: Vue 3 with PrimeVue v4, PrimeIcons, and `@tanstack/vue-table`
+- **Styling**: TailwindCSS, Tailwind Forms, and Custom Glassmorphic CSS variables
+- **Charts**: Apache ECharts (for vector visualizations)
+- **Calendar**: `vanilla-calendar-pro` (fluid event scheduler)
 
-## Learning Laravel
+---
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+## 🛠 Feature Modules
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### 1. Analytics & Operations Dashboard (`/dashboard`)
+An interactive glassmorphic dashboard built using the custom local package `khemraj/laravel-dashboard`.
+- **ECharts Widgets**: Dynamic line, bar, pie, and scatter charts bound to real-time database queries.
+- **Workflow Flowchart**: Interactive drag-and-drop node graph canvas for visual workflow automation.
+- **Embedded AI Chat**: Conversational AI panel sidebar capable of querying data models and generating analytics summaries.
+- **Unified Navigation**: Integrated with the host application's responsive main navigation bar.
 
-## Laravel Sponsors
+### 2. Multi-Factor & Biometric Authentication Suite
+Advanced security workflows beyond conventional password logins:
+- **Email Identification**: Step 1 authentication utilizing device fingerprinting.
+- **Passkeys (WebAuthn)**: Hardware-backed biometrics registration and login.
+- **Custom PIN Login**: Secure 4-to-6 digit PIN registration and recovery tools.
+- **Two-Factor Authentication**: Standard TOTP integration.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### 3. Real-Time Chat (`/chat`)
+A collaborative chat interface built with Livewire 3 and powered by Laravel Reverb.
+- **Websocket Broadcasts**: Instant message updates and typing indicators.
+- **Interactive Modals**: Group creation, chat settings, and attachment browser.
+- **Clean UI**: Responsive chat window styled with premium dark slate palettes.
 
-### Premium Partners
+### 4. AI Agent Playground (`/ai-playground`)
+An AI interaction console for testing custom agent behaviors and models.
+- **Live Conversation Threads**: Create, name, and delete conversation instances.
+- **Tool-Call Diagnostics**: Visual feedback for tool calls, attachments, and model responses.
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+### 5. Leads CRUD SPA (`/leads`)
+A reactive single-page app view built using Vue 3 and PrimeVue.
+- **PrimeVue Components**: Premium table UI with pagination, filtering, and inline edits.
+- **TanStack Table**: High-performance grid data management.
+- **Bulk Operations**: Perform batch status updates and multi-row deletes in a single request.
 
-## Contributing
+### 6. Dynamic Calendar (`/calendar`)
+A fluid schedule management interface.
+- **Vanilla Calendar Pro**: Lightweight, dependency-free calendar displaying events with sub-millisecond load times.
+- **Interactive Forms**: Create, edit, and delete calendar events dynamically via an API-driven frontend.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+---
 
-## Code of Conduct
+## ⚙️ Getting Started & Installation
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### Prerequisites
+- PHP 8.2+
+- Composer
+- Node.js (v18+) & NPM
 
-## Security Vulnerabilities
+### Setup Instructions
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-# laravel-ai
+1. **Clone the Repository** and navigate to the project directory.
+2. **Install Composer & NPM Dependencies**:
+   ```bash
+   composer install
+   npm install
+   ```
+3. **Configure Environment Variables**:
+   ```bash
+   cp .env.example .env
+   php artisan key:generate
+   ```
+   *Make sure to configure your database connection and Reverb variables in `.env`.*
+4. **Run Migrations & Seeders**:
+   ```bash
+   php artisan migrate --seed
+   ```
+5. **Run the Development Environment**:
+   Concurrently start the Laravel application, queue listener, log tailing, and Vite server:
+   ```bash
+   npm run dev
+   ```

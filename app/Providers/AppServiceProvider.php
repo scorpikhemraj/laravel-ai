@@ -29,16 +29,15 @@ class AppServiceProvider extends ServiceProvider
                                     URL::forceScheme('https');
 
                         $dbPath = '/tmp/database.sqlite';
-                                    if (!file_exists($dbPath)) {
-                                                        touch($dbPath);
-                                                        Config::set('database.connections.sqlite.database', $dbPath);
-                                                        Config::set('database.default', 'sqlite');
-                                                        Artisan::call('migrate', ['--force' => true]);
-                                                        Artisan::call('db:seed', ['--force' => true]);
-                                    } else {
-                                                        Config::set('database.connections.sqlite.database', $dbPath);
-                                                        Config::set('database.default', 'sqlite');
-                                    }
+
+                        Config::set('database.connections.sqlite.database', $dbPath);
+                                    Config::set('database.default', 'sqlite');
+
+                        if (!file_exists($dbPath)) {
+                                            touch($dbPath);
+                                            Artisan::call('migrate', ['--force' => true]);
+                                            Artisan::call('db:seed', ['--force' => true]);
+                        }
 
                         Config::set('session.driver', 'cookie');
                     }

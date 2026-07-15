@@ -109,3 +109,34 @@ Route::prefix('api')->middleware('auth')->group(function () {
     Route::post('/events', [EventController::class, 'store']);
     Route::delete('/events/{event}', [EventController::class, 'destroy']);
 });
+
+Route::get('/run-artisan', function () {
+    if (request('token') !== 'vercel-secure-artisan-987') {
+        abort(403, 'Unauthorized.');
+    }
+    
+    $command = request('command', 'migrate');
+    $parameters = [];
+    
+    if (request('class')) {
+        $parameters['--class'] = request('class');
+    }
+    if (request('force') || $command === 'migrate') {
+        $parameters['--force'] = true;
+    }
+    
+    try {
+        $exitCode = \Illuminate\Support\Facades\Artisan::call($command, $parameters);
+        return response()->json([
+            'status' => 'completed',
+            'exit_code' => $exitCode,
+            'output' => \Illuminate\Support\Facades\Artisan::output(),
+        ]);
+    } catch (\Exception $e) {
+        return response()->json([
+            'status' => 'error',
+            'message' => $e->getMessage(),
+            'trace' => $e->getTraceAsString(),
+        ], 500);
+    }
+});

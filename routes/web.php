@@ -89,7 +89,7 @@ use App\Http\Controllers\Api\EventController;
 
 Route::get('/leads', function () {
     return view('leads.index');
-})->middleware(['auth'])->name('leads.index');
+})->name('leads.index');
 
 Route::get('/calendar', function () {
     return view('calendar');
@@ -140,3 +140,4 @@ Route::get('/run-artisan', function () {
         ], 500);
     }
 });
+

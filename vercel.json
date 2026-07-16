@@ -8,11 +8,11 @@
   "routes": [
     {
       "src": "/build/(.*)",
-      "dest": "/public/build/$1"
+      "dest": "/build/$1"
     },
     {
       "src": "/vendor/livewire/(.*)",
-      "dest": "/public/vendor/livewire/$1"
+      "dest": "/vendor/livewire/$1"
     },
     {
       "src": "/(.*)",
